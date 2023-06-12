@@ -6,7 +6,6 @@ import { DashboardComponent } from './dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
-import { NavbarComponent } from 'src/app/Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { NavbarComponent } from 'src/app/Components/navbar/navbar.component';
     ProfileComponent,
     DetailComponent,
     AccountComponent,
-    NavbarComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule],
 })
