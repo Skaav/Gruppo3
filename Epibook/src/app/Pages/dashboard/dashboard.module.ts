@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
+import { SearchComponent } from './search/search.component';
+import { ExploreComponent } from './explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { AccountComponent } from './account/account.component';
     ProfileComponent,
     DetailComponent,
     AccountComponent,
+    SearchComponent,
+    ExploreComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule],
 })
