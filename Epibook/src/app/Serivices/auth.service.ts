@@ -8,46 +8,60 @@ import { Router } from '@angular/router';
 import { IUser } from '../Models/auth/iuser';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  jwtHelper:JwtHelperService = new JwtHelperService();
-  private authSubject = new BehaviorSubject<null | Object>(null)
+  jwtHelper: JwtHelperService = new JwtHelperService();
+  private authSubject = new BehaviorSubject<null | Object>(null);
 
   user$ = this.authSubject.asObservable();
-  isLoggedIn$ = this.user$.pipe(map((data) => Boolean(data)))
+  isLoggedIn$ = this.user$.pipe(map((data) => Boolean(data)));
 
-  apiRegister:string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`
-  apiLogin:string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`
+  apiRegister: string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`;
+  apiLogin: string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`;
 
-  apiUsers:string = environment.usersApi
+  apiUsers: string = environment.usersApi;
 
-  constructor(
-    private http:HttpClient,
-    private router:Router,
-    ) { }
+  constructor(private http: HttpClient, private router: Router) {
+    this.restoreUser();
+  }
   register(user: ILogin) {
-    return this.http.post(this.apiRegister, {...user, returnSecuretoken: true})
-   }
-  registerData(user: IUser){
-    return this.http.post(this.apiUsers, user)
+    return this.http.post(this.apiRegister, {
+      ...user,
+      returnSecuretoken: true,
+    });
+  }
+  registerData(user: IUser) {
+    return this.http.post(this.apiUsers, user);
   }
 
   login(user: ILogin) {
-    return this.http.post(this.apiLogin, {...user, returnSecuretoken: true}).pipe(
-      tap((data) => {
-        this.authSubject.next(data);
-        localStorage.setItem('user', JSON.stringify(data))
-      })
-
-    )
-
+    return this.http
+      .post(this.apiLogin, { ...user, returnSecuretoken: true })
+      .pipe(
+        tap((data) => {
+          this.authSubject.next(data);
+          localStorage.setItem('user', JSON.stringify(data));
+        })
+      );
   }
-  logout(){
+  logout() {
     this.authSubject.next(null);
-    localStorage.removeItem('user')
-    console.log("Utente Sloggato")
+    localStorage.removeItem('user');
+    console.log('Utente Sloggato');
     this.router.navigate(['/auth']);
+  }
+
+  restoreUser() {
+    const userJson = localStorage.getItem('user');
+    if (!userJson) {
+      return;
+    }
+    const user = JSON.parse(userJson);
+    if (this.jwtHelper.isTokenExpired(user.idToken)) {
+      return;
+    }
+
+    this.authSubject.next(user);
   }
 }
