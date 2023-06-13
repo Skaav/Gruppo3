@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { ExploreComponent } from './explore/explore.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from 'src/app/Components/navbar/navbar.component';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NavbarComponent } from 'src/app/Components/navbar/navbar.component';
     AccountComponent,
     SearchComponent,
     ExploreComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,
