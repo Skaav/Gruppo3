@@ -8,7 +8,10 @@ import { AuthService } from 'src/app/Serivices/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(private router:Router, private authSvc:AuthService){}
+  constructor(private router:Router, private authSvc:AuthService, ){}
+  create(){
+    // this.authSvc.createPost
+  }
   logout(){
     localStorage.removeItem('user')
     console.log("Utente Sloggato")

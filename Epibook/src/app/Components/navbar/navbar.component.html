@@ -1,7 +1,7 @@
 <div class="col-12 my-2 text-light" [routerLink]="['/dashboard', 'home']">HOME</div>
 <div class="col-12 my-2 text-light" [routerLink]="['/dashboard', 'search']">SEARCH</div>
 <div class="col-12 my-2 text-light" [routerLink]="['/dashboard', 'explore']">EXPLORE</div>
-<div class="col-12 my-2 text-light" [routerLink]="['/dashboard', 'create']">CREATE</div>
+<div class="col-12 my-2 text-light" (click)="create()">CREATE</div>
 <div class="col-12 my-2 text-light" [routerLink]="['/dashboard', 'profile']">PROFILE</div>
 <div class="col-12">
   <button class="btn btn-danger" (click)="logout()">LOGOUT</button>
