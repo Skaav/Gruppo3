@@ -22,7 +22,6 @@ export class LoginComponent {
   login(){
     this.authSvc.login(this.user).subscribe(data => {
       console.log(data)
-      localStorage.setItem('user', JSON.stringify(data));
       this.router.navigate(['/dashboard']);
     })
   }

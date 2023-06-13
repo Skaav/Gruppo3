@@ -9,14 +9,11 @@ import { AuthService } from 'src/app/Serivices/auth.service';
 })
 export class NavbarComponent {
 
-  constructor(private router:Router){}
+  constructor(private authSvc:AuthService){}
 
-  create(){
-
-  }
   logout(){
-    localStorage.removeItem('user')
-    console.log("Utente Sloggato")
-    this.router.navigate(['/auth']);
+    this.authSvc.logout()
   }
+
+
 }
