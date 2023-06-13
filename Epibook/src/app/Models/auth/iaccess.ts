@@ -3,5 +3,7 @@ export interface IAccess {
   displayNames:string;
   email:string;
   idToken:string;
-  kind:l
+  kind:string;
+  localId:string;
+  registered:boolean;
 }
