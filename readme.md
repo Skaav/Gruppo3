@@ -26,7 +26,7 @@
 
 # Components :
   .Navbar
-    - Account 
+    - Profile 
     -
 
 # Services :

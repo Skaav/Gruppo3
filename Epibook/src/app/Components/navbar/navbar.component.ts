@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Serivices/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+  constructor(private router:Router, private authSvc:AuthService){}
+  logout(){
+    localStorage.removeItem('user')
+    console.log("Utente Sloggato")
+    this.router.navigate(['/auth']);
+  }
 }

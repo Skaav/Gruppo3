@@ -1,11 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { IRegister } from '../Models/auth/iregister';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { ILogin } from '../Models/auth/ilogin';
-import { IAccess } from '../Models/auth/iaccess';
-import { BehaviorSubject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +14,8 @@ export class AuthService {
 
   constructor(
     private http:HttpClient,
-    private router:Router
     ) { }
-  // isLoggedIn(): Observable<boolean> {
-  //     return this.afAuth.authState.pipe(
-  //       map(user => !!user) // Restituisce true se l'utente è autenticato, altrimenti false
-  //     );}
-  register(user: IRegister) {
+  register(user: ILogin) {
     return this.http.post(this.apiRegister, {...user, returnSecuretoken: true})
    }
 

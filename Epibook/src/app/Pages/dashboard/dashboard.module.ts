@@ -9,6 +9,8 @@ import { AccountComponent } from './account/account.component';
 import { SearchComponent } from './search/search.component';
 import { ExploreComponent } from './explore/explore.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from 'src/app/Components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +20,12 @@ import { FormsModule } from '@angular/forms';
     AccountComponent,
     SearchComponent,
     ExploreComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class DashboardModule {}

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILogin } from 'src/app/Models/auth/ilogin';
-import { IRegister } from 'src/app/Models/auth/iregister';
 import { AuthService } from 'src/app/Serivices/auth.service';
 
 @Component({
@@ -14,11 +13,7 @@ user: ILogin = {
   email: '',
   password: ''
 }
-// user: IRegister = {
-//   email: '',
-//   username:'',
 
-// }
 
 constructor(
   private authSvc:AuthService,
