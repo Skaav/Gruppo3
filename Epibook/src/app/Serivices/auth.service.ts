@@ -5,6 +5,7 @@ import { ILogin } from '../Models/auth/ilogin';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { IUser } from '../Models/auth/iuser';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,8 @@ export class AuthService {
   apiRegister:string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebase.apiKey}`
   apiLogin:string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`
 
+  apiUsers:string = environment.usersApi
+
   constructor(
     private http:HttpClient,
     private router:Router,
@@ -27,6 +30,9 @@ export class AuthService {
   register(user: ILogin) {
     return this.http.post(this.apiRegister, {...user, returnSecuretoken: true})
    }
+  registerData(user: IUser){
+    return this.http.post(this.apiUsers, user)
+  }
 
   login(user: ILogin) {
     return this.http.post(this.apiLogin, {...user, returnSecuretoken: true}).pipe(
@@ -34,7 +40,9 @@ export class AuthService {
         this.authSubject.next(data);
         localStorage.setItem('user', JSON.stringify(data))
       })
+
     )
+
   }
   logout(){
     this.authSubject.next(null);

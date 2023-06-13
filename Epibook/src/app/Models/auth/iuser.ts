@@ -4,7 +4,7 @@ export interface IUser {
   email: string;
   profilePic?: string;
   description?: string;
-  postArr:number[];
-  followerArr:number[];
-  followArr:number[]
+  postArr:string[];
+  followerArr:string[];
+  followArr:string[]
 }
