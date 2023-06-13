@@ -4,12 +4,16 @@ import { DashboardComponent } from './dashboard.component';
 import { DetailComponent } from './detail/detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AccountComponent } from './account/account.component';
+import { SearchComponent } from './search/search.component';
+import { ExploreComponent } from './explore/explore.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'detal/:id', component: DetailComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'account/:id', component: AccountComponent },
+  { path: 'explore', component: ExploreComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({

@@ -10,5 +10,4 @@ export const environment = {
   },
   usersApi: "https://epibooksocial-default-rtdb.firebaseio.com/users.json",
   postsApi: "https://epibooksocial-default-rtdb.firebaseio.com/posts.json"
-
 };

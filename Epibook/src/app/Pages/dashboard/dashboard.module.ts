@@ -8,6 +8,7 @@ import { DetailComponent } from './detail/detail.component';
 import { AccountComponent } from './account/account.component';
 import { SearchComponent } from './search/search.component';
 import { ExploreComponent } from './explore/explore.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,10 @@ import { ExploreComponent } from './explore/explore.component';
     SearchComponent,
     ExploreComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    FormsModule
+  ],
 })
 export class DashboardModule {}

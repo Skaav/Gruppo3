@@ -7,4 +7,7 @@ export const environment = {
     authDomain: 'epibooksocial.firebaseapp.com',
     messagingSenderId: '770668529357',
     measurementId: 'G-PKM4Q2WEQ6',
-  },};
+  },
+  usersApi: "https://epibooksocial-default-rtdb.firebaseio.com/users.json",
+  postsApi: "https://epibooksocial-default-rtdb.firebaseio.com/posts.json",
+};
