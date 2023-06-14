@@ -16,10 +16,12 @@ user: ILogin = {
 }
 
 newUser:IUser = {
+  username: '@username',
   email: '',
-  postArr: [],
-  followerArr: [],
-  followArr: []
+  profilePic: 'https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png',
+  description: 'Description',
+  followerArr:[],
+  followArr:[]
 }
 
 
