@@ -6,10 +6,10 @@
   outline: none;
   text-decoration: none;
   list-style: none;
-  border: none;    
+  border: none;
 }
 :root{
-  --first-color-hue: 252;  
+  --first-color-hue: 252;
   --color-dark-light-theme: 15%;
   --color-light-light-theme: 92%;
   --color-white-light-theme: 100%;
@@ -30,8 +30,8 @@ html, body{
   font-family: 'Poppins', sans-serif, 'Bebas Neue', sans-serif;
   color: var(--color-dark);
   background: var(--color-light);
-  overflow: hidden; 
-  font-size: 16px;  
+  overflow: hidden;
+  font-size: 16px;
 }
 
 /* ..............Style Generale del Sito............ */
@@ -86,12 +86,12 @@ img{
 /* .................Inizio Parte del MAIN.................. */
 main{
   position: relative;
-  top: 6rem;    
+  top: 6rem;
 }
 .main-box{
   display: grid;
   grid-template-columns: 18vw auto 20vw;
-  position: relative;    
+  position: relative;
 }
 
 /* ............INIZIO PARTE SINISTRA MAIN........... */
@@ -99,7 +99,7 @@ main{
 aside{
   margin-top: 1rem;
   border-radius:var(--card-border-radius) ;
- 
+
 }
 aside .menu-item{
   display: flex;
@@ -108,7 +108,7 @@ aside .menu-item{
   position: relative;
   cursor: pointer;
   transition: 300ms ease all;
-  background: var(--color-white);  
+  background: var(--color-white);
 }
 aside .menu-item:hover{
   background: var(--color-light);
@@ -116,7 +116,7 @@ aside .menu-item:hover{
 aside .menu-item span img{
   width: 1.7rem;
   margin-left: 2rem;
-  position: relative;     
+  position: relative;
 }
 aside .notfy-counter{
   background: var(--color-first);
@@ -124,8 +124,8 @@ aside .notfy-counter{
   width: fit-content;
   font-size: 0.7rem;
   border-radius: 30%;
-  padding: 0.1rem .4rem; 
-  position: absolute;  
+  padding: 0.1rem .4rem;
+  position: absolute;
   top: .7rem;
   left: 3.1rem;
 }
@@ -133,7 +133,7 @@ aside .notfy-counter{
 
 aside .menu-item h3{
   margin-left: 1.5rem;
-  font-size: 1rem;    
+  font-size: 1rem;
 }
 
 aside .active{
@@ -161,8 +161,8 @@ aside .menu-item:first-child{
 }
 aside .menu-item:nth-last-child(2){
   overflow: hidden;
-  border-bottom-left-radius: var(--card-border-radius);    
-  border-bottom-right-radius: var(--card-border-radius);    
+  border-bottom-left-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
 }
 .button-lg{
   padding: 1rem 0;
@@ -180,21 +180,21 @@ aside .menu-item:nth-last-child(2){
 .middle-box{
   max-width: 700px !important;
   width: 90%;
-  margin: 0 auto;    
+  margin: 0 auto;
 }
 
 
 .main-middle .add-post{
-  display: flex;  
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .4rem var(--card-padding);  
+  padding: .4rem var(--card-padding);
   border-radius: var(--border-radius);
   background: var(--color-white);
-  margin-top: 1rem;    
+  margin-top: 1rem;
 }
 .main-middle .add-post input[type="text"]{
-  justify-self: start;
+  justify-self: flex-start;
   width: 100%;
   padding-left:1rem ;
   background: transparent;
@@ -215,7 +215,7 @@ aside .menu-item:nth-last-child(2){
   height: max-content;
   position: sticky;
   margin-top: 1rem; /*Modificare se inserisco storie */
-  bottom: 0;  
+  bottom: 0;
 }
 
 /*............ AREA MESSAGGI.......... */
@@ -241,13 +241,13 @@ aside .menu-item:nth-last-child(2){
 .messge-serch-bar input[type="search"]{
   background: transparent;
   font-size: .9rem;
-  color: var(--color-dark);   
+  color: var(--color-dark);
 }
 .message-categories{
   display: flex;
   margin-bottom: 1rem;
   justify-content: space-between;
-  align-items: center;    
+  align-items: center;
 }
 .message-categories h6{
   font-weight: bold;
@@ -256,7 +256,7 @@ aside .menu-item:nth-last-child(2){
   padding-bottom: .5rem;
   border-bottom: 4px solid var(--color-light);
   text-align: center;
-  
+
 }
 .message-categories .active{
   border-color: var(--color-first);
@@ -265,24 +265,24 @@ aside .menu-item:nth-last-child(2){
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
-  align-items: start;
+  align-items: flex-start;
 }
 .message:last-child{
   margin-bottom: 0;
 }
 .message p{
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .message .profile-picture{
   position: relative;
-  overflow: visible;  
+  overflow: visible;
   height: 2.6rem;
   width: 2.6rem;
 }.message .profile-picture img{
   border-radius: 50%;
   height: 100%;
-  width: 100%; 
-  object-fit: cover;  
+  width: 100%;
+  object-fit: cover;
 }
 
 .message-request{
@@ -295,40 +295,40 @@ aside .menu-item:nth-last-child(2){
 @media (max-width:1200px) {
   .box{
       width: 96%;
-  }   
+  }
   .main-box{
       grid-template-columns:6rem auto 26vw;
-  } 
+  }
   .main-left{
       width: 6rem;
-      z-index: 5;          
-  }   
+      z-index: 5;
+  }
   .main-box .main-left .profile{
       display: none;
   }
   aside h3{
       display: none;
-  }   
+  }
   aside .button{
       display: none;
-  }   
-  
-  /* .........MAX WIDTH(991px)..... */ 
+  }
+
+  /* .........MAX WIDTH(991px)..... */
   @media (max-width:990px) {
       nav .serch-bar{
           display: none;
-      } 
+      }
       .main-box{
           grid-template-columns: auto 0;
       }
       .main-right{
           display: none;
-      }  
-      .main-left{        
-          right: 0;  
-          top: 16%;  
-          position: fixed;               
-      }             
+      }
+      .main-left{
+          right: 0;
+          top: 16%;
+          position: fixed;
+      }
   }
 }
 
