@@ -1,19 +1,17 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
     <div class="col-4 bg-primary d-none d-lg-inline">
-        <app-navbar class="row"></app-navbar>
+      <app-navbar class="row"></app-navbar>
     </div>
     <div class="col-lg-6 d-none d-lg-inline">
       <div class="row">
-
+        <div class="col-12" *ngFor="let post of postsArr">
+          <p>questo è un post</p>
+        </div>
       </div>
     </div>
     <div class="col-2 bg-primary d-none d-lg-inline">
-      <div class="row">
-
-      </div>
+      <div class="row"></div>
     </div>
   </div>
-
 </div>
-

@@ -4,16 +4,18 @@ import { environment } from 'src/environments/environment';
 import { IPost } from '../Models/dashboard/ipost';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DashboardService {
+  postApi: string = environment.postsApi;
 
-  postApi:string = environment.postsApi
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  create(post:IPost){
-    return this.http.post(this.postApi, post)
+  create(post: IPost) {
+    return this.http.post(this.postApi, post);
   }
 
+  getAll() {
+    return this.http.get(this.postApi);
+  }
 }

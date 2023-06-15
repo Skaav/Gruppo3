@@ -2,28 +2,60 @@ import { IPost } from 'src/app/Models/dashboard/ipost';
 import { DashboardService } from './../../../Serivices/dashboard.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/Serivices/user.service';
+import { IUser } from 'src/app/Models/auth/iuser';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent {
+  newPost: IPost = {
+    userId: '',
+    body: '',
+    category: '',
+    likes: [],
+    comments: [],
+    author: '',
+  };
 
-newPost:IPost = {
-  userId: '',
-  body: '',
-  cetegory: '',
-  likes: [],
-  comments: []
-}
+  currentId: string = '';
+  currentUser: IUser = {
+    username: '',
+    email: '',
+    profilePic: '',
+    description: '',
+    followerArr: [],
+    followArr: [],
+  };
 
-constructor(private dashSvc:DashboardService, private router:Router){}
+  constructor(
+    private dashSvc: DashboardService,
+    private router: Router,
+    private userSvc: UserService
+  ) {}
 
-create(){
-  this.dashSvc.create(this.newPost).subscribe(data =>{
-    this.router.navigate(['/dashboard'])
-  })
-}
+  ngOnInit() {
+    this.userSvc.giveCurrentUser();
+    this.getCurrentUser();
+  }
 
+  getCurrentUser() {
+    this.userSvc.getCurrent().subscribe((data) => {
+      const res = Object.values(data)[0];
+      const id = Object.keys(data)[0];
+
+      this.currentUser = res;
+      this.currentId = id;
+    });
+  }
+
+  create() {
+    this.newPost.userId = this.currentId;
+    this.newPost.author = this.currentUser.username;
+    this.dashSvc.create(this.newPost).subscribe((data) => {
+      this.router.navigate(['/dashboard']);
+    });
+  }
 }
