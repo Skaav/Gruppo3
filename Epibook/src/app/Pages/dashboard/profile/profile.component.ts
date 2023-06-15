@@ -43,6 +43,8 @@ export class ProfileComponent implements OnInit {
   edit() {
     this.userSvc.editUser(this.currentUser, this.currentId).subscribe((data) => {
       this.getCurrentUser()
+      this.editZone = false
+
     })
   }
 
