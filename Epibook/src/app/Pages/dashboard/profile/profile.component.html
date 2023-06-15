@@ -4,57 +4,53 @@
     <div class="col-12 pt-5 h-100">
       <div class="box main-container d-flex pt-4 h-100">
         <!--================== PARTE SINISTRA ==================  -->
-        <div class="main-left col-3">
+        <div class="main-left col-3 d-none d-lg-inline">
           <!-- .........BARRA SULLA SINISTRA.......... -->
           <aside>
-            <a class="menu-item active">
+            <a class="menu-item text-decoration-none">
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-house"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
                 </svg>
               </span>
               <h3>Home</h3>
             </a>
-
-            <a class="menu-item" [routerLink]="['/dashboard', 'explore']">
+            <a class="menu-item text-decoration-none" [routerLink]="['/dashboard', 'explore']">
               <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-compass"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
-                  />
-                  <path
-                    d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-binoculars" viewBox="0 0 16 16">
+                  <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
                 </svg>
               </span>
               <h3>Explore</h3>
             </a>
+            <a class="menu-item text-decoration-none" [routerLink]="['/dashboard', 'profile']">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                </svg>
+              </span>
+              <h3>Profile</h3>
+            </a>
+            <a class="menu-item text-decoration-none" [routerLink]="['/dashboard', 'search']">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </span>
+              <h3>Search</h3>
+            </a>
+
+
           </aside>
           <!-- ..........FINE BARRA SINISTRA........... -->
         </div>
         <!--==================  Main Left End =================== -->
 
         <!--================== Main Middle Start================== -->
-        <div class="main-middle col-6 h-100">
+        <div class="main-middle h-100 col-12 col-lg-6">
           <div class="middle-container h-100">
             <!--.............. Feed Aria Start............... -->
-            <div class="feeds h-100">
+            <div class="feed h-100">
               <div class="row p-2 h-100">
                 <div class="col-12">
                   <div class="row">
@@ -67,11 +63,10 @@
                     <div class="col-9">{{ currentUser.username }}</div>
                   </div>
                 </div>
-
                 <div class="col-12">
                   <p>{{ currentUser.description }}</p>
                   <p>{{ currentUser.email }}</p>
-                  <button class="btn btn-warning" (click)="editZone = true">
+                  <button class="btn btn-warning mb-2" (click)="editZone = true">
                     Edit Profile
                   </button>
                 </div>
@@ -79,7 +74,7 @@
                 <div class="col-12" *ngIf="editZone == true">
                   <form>
                     <h1 class="h3 my-3 fw-normal text-center">
-                      Please sign up
+                      Edit your profile
                     </h1>
 
                     <input
@@ -119,7 +114,7 @@
                     />
 
                     <button
-                      class="w-100 btn btn-lg btn-primary btn-log my-4"
+                      class="w-100 btn btn-lg btn-warning btn-log my-4"
                       (click)="edit()"
                     >
                       Edit Profile
@@ -127,8 +122,8 @@
                   </form>
                 </div>
 
-                <div class="feed h-100 col-12">
-                  <div class="row h-100">
+                <div class=" h-100 col-12">
+                  <div class="row h-100 pb-5">
                     <div class="col-12 p-4" *ngFor="let post of profilePosts">
                       <div class="card">
                         <img
@@ -210,91 +205,31 @@
         <!--================== Main Middle End==================  -->
 
         <!--==================  Main Right Start==================  -->
-        <div class="main-right col-3">
+        <div class="main-right col-3 d-none d-lg-inline">
           <!-- ..............Start Message............ -->
 
           <div class="messages">
             <!-- ....Message top..... -->
             <div class="message-top">
-              <h4>Message</h4>
-              <i class="fa fa-edit"></i>
+              <h4>Users</h4>
             </div>
-            <!-- ....Searchbar... -->
-            <div class="messge-serch-bar">
-              <i class="fa fa-search"></i>
-              <input
-                type="search"
-                placeholder="Search message"
-                id="message-search"
-              />
-            </div>
-            <!-- ......Message Categories..... -->
-            <div class="message-categories">
-              <h6 class="active">Primary</h6>
-              <h6>General</h6>
-              <h6 class="message-request">Request(2)</h6>
-            </div>
+
+
             <!-- ......Message..... -->
-            <div class="message">
+
+            <div class="message" *ngFor="let user of usersArr">
               <div class="profile-picture">
                 <img
-                  src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
-                  alt=""
+                  [src]="user.profilePic"
+                  alt="Profile Pic"
                 />
               </div>
               <div class="message-body">
-                <h5>Guido Mallamace</h5>
+                <h5>{{user.username}}</h5>
                 <p class="text-gry">Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
-            <div class="message">
-              <div class="profile-picture">
-                <img
-                  src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
-                  alt=""
-                />
-              </div>
-              <div class="message-body">
-                <h5>Miles Morales</h5>
-                <p class="text-gry">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-            <div class="message">
-              <div class="profile-picture">
-                <img
-                  src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
-                  alt=""
-                />
-              </div>
-              <div class="message-body">
-                <h5>Mastro Geppetto</h5>
-                <p class="text-gry">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-            <div class="message">
-              <div class="profile-picture">
-                <img
-                  src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
-                  alt=""
-                />
-              </div>
-              <div class="message-body">
-                <h5>Dr Strange</h5>
-                <p class="text-gry">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-            <div class="message">
-              <div class="profile-picture">
-                <img
-                  src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
-                  alt=""
-                />
-              </div>
-              <div class="message-body">
-                <h5>Pirata Mike</h5>
-                <p class="text-gry">Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

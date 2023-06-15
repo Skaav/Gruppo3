@@ -13,6 +13,8 @@ export class DashboardComponent {
   postsArr: IPost[] = [];
   postKeysArr: string[] = [];
 
+  usersArr:IUser[] = [];
+
   currentId: string = '';
 
   constructor(
@@ -32,6 +34,9 @@ export class DashboardComponent {
     this.getAll();
     this.userSvc.giveCurrentUser();
     this.getCurrentUser();
+    this.dashboardSvc.getAllUsers().subscribe((data) => {
+      this.usersArr = Object.values(data);
+    })
   }
 
   getCurrentUser() {

@@ -2,7 +2,7 @@
      <!-- ...................INIZIO Navbar................... -->
      <nav>
       <div class="box nav-container">
-          <div class="logo" [routerLink]="['/dashboard', 'home']">
+          <div class="logo" [routerLink]="['/dashboard']">
               <h3>EpiBook</h3>
           </div>
           <div class="serch-bar" [routerLink]="['/dashboard', 'search']">
@@ -12,7 +12,7 @@
           <div class="add-post">
               <label for="add-post" class="button button-first mini-button" [routerLink]="['/dashboard', 'create']">Add Post</label>
               <div class="profile-picture" id="my-profile-picture" [routerLink]="['/dashboard', 'profile']">
-                  <img src="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png" alt="profile picture">
+                  <img [src]="currentUser.profilePic" alt="profile picture">
               </div>
           </div>
       </div>

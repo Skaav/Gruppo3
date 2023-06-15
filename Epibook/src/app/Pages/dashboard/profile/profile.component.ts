@@ -2,6 +2,7 @@ import { DashboardService } from './../../../Serivices/dashboard.service';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/Models/auth/iuser';
 import { IPost } from 'src/app/Models/dashboard/ipost';
+import { AuthService } from 'src/app/Serivices/auth.service';
 import { UserService } from 'src/app/Serivices/user.service';
 
 @Component({
@@ -24,8 +25,10 @@ export class ProfileComponent implements OnInit {
     followerArr: [],
     followArr: [],
   };
+  usersArr:IUser[] = [];
 
   constructor(
+    private authSvc: AuthService,
     private userSvc: UserService,
     private dashSvc: DashboardService
   ) {}
@@ -34,6 +37,9 @@ export class ProfileComponent implements OnInit {
     this.userSvc.giveCurrentUser();
     this.getCurrentUser();
     this.getProfilePosts();
+    this.dashSvc.getAllUsers().subscribe((data) => {
+      this.usersArr = Object.values(data);
+    })
   }
 
   getCurrentUser() {
@@ -66,5 +72,8 @@ export class ProfileComponent implements OnInit {
         (p) => p.userId == this.currentId
       );
     });
+  }
+  logout(){
+    this.authSvc.logout()
   }
 }
