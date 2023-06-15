@@ -18,6 +18,7 @@ export class CreateComponent {
     likes: [],
     comments: [],
     author: '',
+    authorProPic: '',
   };
 
   currentId: string = '';
@@ -54,6 +55,7 @@ export class CreateComponent {
   create() {
     this.newPost.userId = this.currentId;
     this.newPost.author = this.currentUser.username;
+    this.newPost.authorProPic = this.currentUser.profilePic;
     this.dashSvc.create(this.newPost).subscribe((data) => {
       this.router.navigate(['/dashboard']);
     });

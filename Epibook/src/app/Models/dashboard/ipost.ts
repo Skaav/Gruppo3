@@ -6,4 +6,5 @@ export interface IPost {
   likes: string[];
   comments: Comment[];
   author: string | undefined;
+  authorProPic: string | undefined;
 }
