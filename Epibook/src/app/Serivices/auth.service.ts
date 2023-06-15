@@ -62,6 +62,7 @@ export class AuthService {
       return;
     }
 
+    this.router.navigate(['/dashboard']);
     this.authSubject.next(user);
   }
 }

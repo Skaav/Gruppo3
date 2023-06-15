@@ -8,6 +8,11 @@ import { UserService } from 'src/app/Serivices/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+
+  editZone:boolean = false
+
+  currentId:string = ''
+
   currentUser:IUser = {
     username: '',
     email: '',
@@ -28,7 +33,16 @@ export class ProfileComponent implements OnInit {
   getCurrentUser() {
     this.userSvc.getCurrent().subscribe((data) => {
      const res = Object.values(data)[0]
+     const id = Object.keys(data)[0]
+
      this.currentUser = res
+     this.currentId = id
+    })
+  }
+
+  edit() {
+    this.userSvc.editUser(this.currentUser, this.currentId).subscribe((data) => {
+      this.getCurrentUser()
     })
   }
 

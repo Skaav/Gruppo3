@@ -12,6 +12,23 @@
     <div class="col-12">
       <p>{{currentUser.description}}</p>
       <p>{{currentUser.email}}</p>
+      <button class="btn btn-warning" (click)="editZone = true">Edit Profile</button>
+    </div>
+
+    <div class="col-12" *ngIf="editZone == true">
+      <form>
+        <h1 class="h3 my-3 fw-normal text-center">Please sign up</h1>
+
+          <input type="email" class="form-control my-2" name="email" placeholder="Email" required [(ngModel)]="currentUser.email">
+
+          <input type="text" class="form-control my-2" name="username" placeholder="Username" required [(ngModel)]="currentUser.username">
+
+          <input type="text" class="form-control my-2" name="profilepic" placeholder="Foto Profilo" required [(ngModel)]="currentUser.profilePic">
+
+          <input type="textarea" class="form-control my-2" name="description" placeholder="Descrizione Profilo" required [(ngModel)]="currentUser.description">
+
+        <button class="w-100 btn btn-lg btn-primary btn-log my-4" (click)="edit()">Sign up</button>
+      </form>
     </div>
 
   </div>

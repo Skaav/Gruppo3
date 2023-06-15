@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { IUser } from '../Models/auth/iuser';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,8 @@ export class UserService {
         .set('orderBy', '"email"')
         .set('equalTo', `"${this.currentEmail}"`)
     })
+  }
+  editUser(user:IUser, id:string) {
+    return this.http.put('https://epibooksocial-default-rtdb.firebaseio.com/users/' + id + '.json', user)
   }
 }
