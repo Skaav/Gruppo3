@@ -2,21 +2,39 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IPost } from '../Models/dashboard/ipost';
+import { UserService } from './user.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DashboardService {
+  postApi: string = environment.postsApi;
 
-  postApi:string = environment.postsApi
+  constructor(private http: HttpClient, private userSvc: UserService) {}
 
-  constructor(private http:HttpClient) { }
-
-  create(post:IPost){
-    return this.http.post(this.postApi, post)
+  create(post: IPost) {
+    return this.http.post(this.postApi, post);
   }
 
   getAll() {
     return this.http.get(this.postApi);
+  }
+
+  updatePosts() {
+    throw new Error('Method not implemented.');
+  }
+
+  like(post: IPost, id: string) {
+    return this.http.put(
+      'https://epibooksocial-default-rtdb.firebaseio.com/posts/' + id + '.json',
+      post
+    );
+  }
+
+  delete(post: IPost, id: string) {
+    return this.http.delete(
+      'https://epibooksocial-default-rtdb.firebaseio.com/posts/' + id + '.json',
+      post
+    );
   }
 }

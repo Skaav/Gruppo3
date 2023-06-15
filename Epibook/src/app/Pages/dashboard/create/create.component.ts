@@ -8,12 +8,12 @@ import { UserService } from 'src/app/Serivices/user.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.scss']
+  styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent {
   currentId: string = '';
 
-  newPost:IPost = {
+  newPost: IPost = {
     userId: '',
     body: '',
     category: '',
@@ -21,8 +21,8 @@ export class CreateComponent {
     comments: [],
     author: '',
     authorProPic: '',
-    image: ''
-  }
+    image: '',
+  };
 
   currentUser: IUser = {
     username: '',
@@ -58,10 +58,9 @@ export class CreateComponent {
     this.newPost.userId = this.currentId;
     this.newPost.author = this.currentUser.username;
     this.newPost.authorProPic = this.currentUser.profilePic;
+    this.newPost.likes.push(this.currentId);
     this.dashSvc.create(this.newPost).subscribe((data) => {
       this.router.navigate(['/dashboard']);
     });
   }
 }
-
-

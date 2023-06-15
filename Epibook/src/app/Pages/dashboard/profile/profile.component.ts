@@ -7,10 +7,9 @@ import { UserService } from 'src/app/Serivices/user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-
   editZone: boolean = false;
 
   currentId: string = '';
@@ -25,7 +24,6 @@ export class ProfileComponent implements OnInit {
     followerArr: [],
     followArr: [],
   };
-
 
   constructor(
     private userSvc: UserService,
@@ -55,6 +53,9 @@ export class ProfileComponent implements OnInit {
         this.getCurrentUser();
         this.editZone = false;
       });
+    // this.dashSvc.updatePosts().subscribe((data) => {
+    //   this.getProfilePosts()
+    // })
   }
 
   getProfilePosts() {
@@ -62,7 +63,7 @@ export class ProfileComponent implements OnInit {
       this.generalPostsArr = Object.values(data);
       console.log(this.generalPostsArr);
       this.profilePosts = this.generalPostsArr.filter(
-        (p) => p.author == this.currentUser.username
+        (p) => p.userId == this.currentId
       );
     });
   }

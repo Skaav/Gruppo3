@@ -4,32 +4,33 @@ import { environment } from 'src/environments/environment';
 import { IUser } from '../Models/auth/iuser';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  usersApi: string = environment.usersApi;
+  currentEmail: string = '';
 
-  usersApi:string = environment.usersApi
-  currentEmail:string = ''
-
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   giveCurrentUser() {
-    const userDataLocal = localStorage.getItem('user')
+    const userDataLocal = localStorage.getItem('user');
     if (userDataLocal) {
-
       const userData = JSON.parse(userDataLocal);
 
       this.currentEmail = userData.email;
+    }
   }
-  }
-  getCurrent(){
+  getCurrent() {
     return this.http.get(this.usersApi, {
       params: new HttpParams()
         .set('orderBy', '"email"')
-        .set('equalTo', `"${this.currentEmail}"`)
-    })
+        .set('equalTo', `"${this.currentEmail}"`),
+    });
   }
-  editUser(user:IUser, id:string) {
-    return this.http.put('https://epibooksocial-default-rtdb.firebaseio.com/users/' + id + '.json', user)
+  editUser(user: IUser, id: string) {
+    return this.http.put(
+      'https://epibooksocial-default-rtdb.firebaseio.com/users/' + id + '.json',
+      user
+    );
   }
 }
