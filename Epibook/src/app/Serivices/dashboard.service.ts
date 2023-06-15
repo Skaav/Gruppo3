@@ -16,4 +16,7 @@ export class DashboardService {
     return this.http.post(this.postApi, post)
   }
 
+  getAll() {
+    return this.http.get(this.postApi);
+  }
 }

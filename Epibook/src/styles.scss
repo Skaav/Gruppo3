@@ -42,7 +42,11 @@ html, body{
 
 img{
   display: block;
-  width: 100%;
+  max-width: 100%;
+}
+.author-pic{
+  border-radius: 100% ;
+  width: 6%;
 }
 
 .profile-picture{
@@ -289,7 +293,9 @@ aside .menu-item:nth-last-child(2){
   color: var(--color-first);
 }
 
-
+.feed{
+  overflow: scroll;
+}
 /* ====================Media Queryes======================= */
 /* .........MAX WIDTH(1200PX)..... */
 @media (max-width:1200px) {

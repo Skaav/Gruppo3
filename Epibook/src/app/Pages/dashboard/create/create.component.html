@@ -5,14 +5,15 @@
 
     <input type="text" class="form-control my-2" name="body" placeholder="Post description" required [(ngModel)]="newPost.body">
 
-    <select class="form-select" aria-label="Categoria del post">
+    <select class="form-select" aria-label="Categoria del post" name="category" [(ngModel)]="newPost.category">
       <option selected> Scegli una categoria:</option>
-      <option value="1">Politica</option>
-      <option value="2">Sport</option>
-      <option value="3">Musica</option>
-      <option value="4">Arte</option>
-      <option value="5">News</option>
-      <option value="6">Pirati</option>
+      <option value="Politica">Politica</option>
+      <option value="Sport">Sport</option>
+      <option value="Musica">Musica</option>
+      <option value="Arte">Arte</option>
+      <option value="News">News</option>
+      <option value="Pirati">Pirati</option>
+      <option value="Animali">Animali</option>
 
     </select>
 
