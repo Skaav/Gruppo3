@@ -9,6 +9,10 @@ import { UserService } from 'src/app/Serivices/user.service';
 })
 export class ProfileComponent implements OnInit {
 
+  editZone:boolean = false
+
+  currentId:string = ''
+
   currentUser:IUser = {
     username: '',
     email: '',
@@ -22,14 +26,25 @@ export class ProfileComponent implements OnInit {
   constructor(private userSvc:UserService){}
 
   ngOnInit() {
+    this.userSvc.giveCurrentUser()
     this.getCurrentUser()
   }
 
   getCurrentUser() {
-    this.userSvc.giveCurrentUser()
     this.userSvc.getCurrent().subscribe((data) => {
-      const userData = data as IUser
-      this.currentUser = userData
+     const res = Object.values(data)[0]
+     const id = Object.keys(data)[0]
+
+     this.currentUser = res
+     this.currentId = id
+    })
+  }
+
+  edit() {
+    this.userSvc.editUser(this.currentUser, this.currentId).subscribe((data) => {
+      this.getCurrentUser()
+      this.editZone = false
+
     })
   }
 
