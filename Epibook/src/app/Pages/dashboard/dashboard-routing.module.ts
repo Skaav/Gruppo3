@@ -10,7 +10,7 @@ import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'detal/:id', component: DetailComponent },
+  { path: 'detial/:id', component: DetailComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'account/:id', component: AccountComponent },
   { path: 'explore', component: ExploreComponent },

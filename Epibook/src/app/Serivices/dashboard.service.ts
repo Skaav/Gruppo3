@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IPost } from '../Models/dashboard/ipost';
@@ -8,6 +8,7 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class DashboardService {
+
   postApi: string = environment.postsApi;
 
   constructor(private http: HttpClient, private userSvc: UserService) {}
@@ -18,6 +19,9 @@ export class DashboardService {
 
   getAll() {
     return this.http.get(this.postApi);
+  }
+  getAllUsers() {
+    return this.http.get(environment.usersApi);
   }
 
   updatePosts() {
@@ -37,4 +41,5 @@ export class DashboardService {
       post
     );
   }
+
 }
