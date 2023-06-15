@@ -8,29 +8,24 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   usersApi:string = environment.usersApi
-  currentEmail:string = this.giveCurrentUser()
+  currentEmail:string = ''
 
   constructor(private http:HttpClient) { }
 
-  giveCurrentUser():any {
+  giveCurrentUser() {
     const userDataLocal = localStorage.getItem('user')
     if (userDataLocal) {
 
-     const userData = JSON.parse(userDataLocal);
+      const userData = JSON.parse(userDataLocal);
 
-//TODO QUI CE STA IL PROBLEMA
-//TODO QUI CE STA IL PROBLEMA
-//TODO QUI CE STA IL PROBLEMA
-//TODO QUI CE STA IL PROBLEMA
-
-      return userData.user.email
+      this.currentEmail = userData.email;
   }
   }
   getCurrent(){
     return this.http.get(this.usersApi, {
       params: new HttpParams()
         .set('orderBy', '"email"')
-        .set('equalTo', `${this.currentEmail}`)
+        .set('equalTo', `"${this.currentEmail}"`)
     })
   }
 }

@@ -8,7 +8,6 @@ import { UserService } from 'src/app/Serivices/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
   currentUser:IUser = {
     username: '',
     email: '',
@@ -22,14 +21,14 @@ export class ProfileComponent implements OnInit {
   constructor(private userSvc:UserService){}
 
   ngOnInit() {
+    this.userSvc.giveCurrentUser()
     this.getCurrentUser()
   }
 
   getCurrentUser() {
-    this.userSvc.giveCurrentUser()
     this.userSvc.getCurrent().subscribe((data) => {
-      const userData = data as IUser
-      this.currentUser = userData
+     const res = Object.values(data)[0]
+     this.currentUser = res
     })
   }
 
