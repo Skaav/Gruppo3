@@ -75,7 +75,7 @@
 
             <!-- ......Message..... -->
 
-            <div class="message" *ngFor="let user of usersArr">
+            <div class="message" *ngFor="let user of usersArr" [routerLink]="['/dashboard', 'account', user.username]">
               <div class="profile-picture">
                 <img
                   [src]="user.profilePic"

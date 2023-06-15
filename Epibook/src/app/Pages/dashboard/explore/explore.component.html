@@ -52,14 +52,62 @@
             <!--.............. Feed Aria Start............... -->
             <div class="feeds h-100">
               <div class="feed h-100 col-12">
-                <div class="row h-100 pb-2">
-                  <p>Qui vanno i post</p>
+                <div class="row p-2">
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-warning h-100 p-3">
+                      <span>Scopri</span><h3>Politica</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-danger h-100 p-3">
+                      <span>Scopri</span><h3>Sport</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-success h-100 p-3">
+                      <span>Scopri</span><h3>Musica</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-secondary h-100 p-3">
+                      <span>Scopri</span><h3>Arte</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-primary h-100 p-3">
+                      <span>Scopri</span><h3>News</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-danger h-100 p-3">
+                      <span>Scopri</span><h3>Pirati</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-dark h-100 p-3 text-light">
+                      <span>Scopri</span><h3>Animali</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-success h-100 p-3">
+                      <span>Scopri</span><h3>Viaggi</h3>
+                    </div>
+                  </div>
+                  <div class="col-4 p-2">
+                    <div class="rounded-3 bg-warning h-100 p-3">
+                      <span>Scopri</span><h3>Web</h3>
+                    </div>
+                  </div>
+
+                  </div>
+                  <div class="row">
+                    <p>Qui vanno i Post</p>
+                  </div>
                 </div>
               </div>
             </div>
             <!--.............. Feed Aria End............... -->
           </div>
-        </div>
         <!--================== Main Middle End==================  -->
 
         <!--==================  Main Right Start==================  -->
@@ -75,7 +123,7 @@
 
             <!-- ......Message..... -->
 
-            <div class="message" *ngFor="let user of usersArr">
+            <div class="message" *ngFor="let user of usersArr" [routerLink]="['/dashboard', 'account', user.username]">
               <div class="profile-picture">
                 <img
                   [src]="user.profilePic"
@@ -90,7 +138,6 @@
 
           </div>
         </div>
-      </div>
       <!-- ..............End Message............ -->
     </div>
   </div>

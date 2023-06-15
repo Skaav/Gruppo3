@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from 'src/app/Models/auth/iuser';
 import { IPost } from 'src/app/Models/dashboard/ipost';
 import { DashboardService } from 'src/app/Serivices/dashboard.service';
-import { UserService } from 'src/app/Serivices/user.service';
 
 @Component({
   selector: 'app-account',
@@ -11,7 +10,10 @@ import { UserService } from 'src/app/Serivices/user.service';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
+
+leftUsersArr:IUser[]= [];
 usersArr:IUser[]= [];
+
 choosedUser:IUser = {
   username: '',
   email: '',
@@ -32,7 +34,8 @@ ngOnInit() {
     this.route.params
     .subscribe((params:any)=>{
       this.dashSvc.getAllUsers().subscribe( (data) => {
-        this.usersArr= Object.values(data)
+        this.usersArr = Object.values(data)
+        this.leftUsersArr = Object.values(data)
 
         this.usersArr = this.usersArr.filter( (user) => user.username == params.id)
         this.choosedUser = this.usersArr[0]
