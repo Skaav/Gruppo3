@@ -1,19 +1,221 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <div class="col-4 bg-primary d-none d-lg-inline">
-        <app-navbar class="row"></app-navbar>
-    </div>
-    <div class="col-lg-6 d-none d-lg-inline">
-      <div class="row">
+    <app-navbar></app-navbar>
+    <div class="col-12">
+      <main>
+        <div class="box main-container">
 
-      </div>
-    </div>
-    <div class="col-2 bg-primary d-none d-lg-inline">
-      <div class="row">
 
-      </div>
+            <!--================== PARTE SINISTRA ==================  -->
+            <div class="main-left">
+                <!-- .........BARRA SULLA SINISTRA.......... -->
+                <aside>
+
+                    <a  class="menu-item active">
+                        <span><img src="./images/svg/house-door.svg" alt=""></span> <h3>Home</h3>
+                    </a>
+
+                    <a  class="menu-item">
+                        <span><img src="./images/svg/joystick.svg" alt=""></span> <h3>Explore</h3>
+                    </a>
+
+                    <a  class="menu-item" id="Notify-box">
+                        <span><img src="./images/svg/bell.svg" alt=""></span>
+                        <small class="notfy-counter nt" id="ntCounter1">7+</small>
+                         <h3>Notifications</h3>
+                    </a>                     
+
+                    <a  class="menu-item" id="messageMenu">
+                        <span><img src="./images/svg/chat-left-dots.svg" alt=""></span> 
+                        <small class="notfy-counter" id="notfyCoutner2">3</small>
+                        <h3>Message</h3>
+                    </a>
+
+                    <a  class="menu-item" >
+                        <span><img src="./images/svg/bookmarks.svg" alt=""></span> <h3>Book Marks</h3>
+                    </a>
+
+                    <a  class="menu-item">
+                        <span><img src="./images/svg/graph-up-arrow.svg" alt=""></span> <h3>Analytics</h3>
+                    </a>
+
+                    <a  class="menu-item" id="theme">
+                        <span><img src="./images/svg/palette.svg" alt=""></span> <h3>Theme</h3>
+                    </a>
+
+                    <a  class="menu-item">
+                        <span><img src="./images/svg/gear.svg" alt=""></span> <h3>Settings</h3>
+                    </a>
+
+
+                    <!-- ........CREA UN NUOVO POST......... -->
+                    <label for="add-post" class="button button-first button-lg" id="crate-lg">Create A Post</label>
+
+
+                </aside>
+                <!-- ..........FINE BARRA SINISTRA........... -->
+
+
+
+            </div>
+            <!--==================  Main Left End =================== -->
+
+
+            <!--================== Main Middle Start================== -->
+            <div class="main-middle">
+                <div class="middle-container">
+
+                <!-- .........Post Input.......... -->
+                <form class="add-post input-post">
+                    <div class="profile-picture" id="my-profile-picture">
+                        <img src="./Portrait.jpg" alt="">
+                    </div>
+                    <input type="text" placeholder="What are you thinking?" id="add-post">
+                    <input type="submit" value="post" class="button button-primary">
+                </form>
+
+                   <!--.............. Feed Aria Start............... -->
+                   <div class="feeds"> 
+                    <div class="feed">
+
+                    </div>
+                    <div class="feed">
+                        <!-- ....Feed Top.... -->
+                        <div class="feed-top">
+                            <div class="user">
+                             </div>
+                        
+                        </div>
+                 
+                        <!-- ...Feed Action Aria... -->
+                        <div class="action-button">
+                            <div class="interaction-button">
+                                <span><i class="fa fa-heart"></i></span>
+                                <span><i class="fa fa-comment-dots"></i></span>
+                                <span><i class="fa fa-link"></i></span>     
+                            </div>
+                            <div class="bookmark">
+                                <i class="fa fa-bookmark"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed">
+                        <!-- ....Feed Top.... -->
+                        <div class="feed-top">
+                            <div class="user">
+                                <div class="profile-picture">
+                                    <img src="./Assets/images/img/n5.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+    
+                        
+                        <!-- ...Feed Action Aria... -->
+                        <div class="action-button">
+                            <div class="interaction-button">
+                                <span><i class="fa fa-heart"></i></span>
+                                <span><i class="fa fa-comment-dots"></i></span>
+                                <span><i class="fa fa-link"></i></span>     
+                            </div>
+                            <div class="bookmark">
+                                <i class="fa fa-bookmark"></i>
+                            </div>
+                        </div>
+                    </div>                      
+                   </div>                                          
+                   <!--.............. Feed Aria End............... -->
+                </div> 
+            </div>
+            <!--================== Main Middle End==================  -->
+
+           
+
+            <!--==================  Main Right Start==================  -->
+            <div class="main-right">
+                <!-- ..............Start Message............ -->
+
+                <div class="messages">
+                    <!-- ....Message top..... -->
+                    <div class="message-top">
+                        <h4>Message</h4> <i class="fa fa-edit"></i>
+                    </div>
+                    <!-- ....Searchbar... -->                        
+                    <div class="messge-serch-bar">
+                        <i class="fa fa-search"></i>
+                        <input type="search" placeholder="Search message" id="message-search">
+                    </div>
+                    <!-- ......Message Categories..... -->
+                    <div class="message-categories">
+                        <h6 class="active">Primary</h6>
+                        <h6>General</h6>
+                        <h6 class="message-request">Request(2)</h6>
+                    </div>
+                    <!-- ......Message..... -->
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="./Portrait.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Guido Mallamace</h5>
+                            <p class="text-gry">
+                               Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="./Portrait.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Miles Morales</h5>
+                            <p class="text-gry">
+                               Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="./Portrait.jpg" alt="">
+                        </div>
+                        <div class="message-body">
+                            <h5>Mastro Geppetto</h5>
+                            <p class="text-gry">
+                               Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="./Portrait.jpg" alt=""> 
+                        </div>
+                        <div class="message-body">
+                            <h5>Dr Strange</h5>
+                            <p class="text-gry">
+                               Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="profile-picture">
+                            <img src="./Portrait.jpg" alt="">
+                         
+                        </div>
+                        <div class="message-body">
+                            <h5>Pirata Mike</h5>
+                            <p class="text-gry">
+                               Lorem ipsum dolor sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+<!-- ..............End Message............ -->
+    </main>
     </div>
   </div>
-
 </div>
+
+        <!-- ...................INIZIO Main Section................... -->
 
