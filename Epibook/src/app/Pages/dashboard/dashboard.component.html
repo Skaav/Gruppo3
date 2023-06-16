@@ -201,15 +201,17 @@
             <!-- ......Message..... -->
 
             <div class="message" *ngFor="let user of usersArr" [routerLink]="['/dashboard', 'account', user.username]">
-              <div class="profile-picture">
-                <img
-                  [src]="user.profilePic"
-                  alt="Profile Pic"
-                />
-              </div>
-              <div class="message-body">
+              <div *ngIf="user.followArr[0] != '-NY1yKfsgmYX8PG1nIiO'">
+                <div class="profile-picture">
+                  <img
+                    [src]="user.profilePic"
+                    alt="Profile Pic"
+                  />
+                </div>
+                <div class="message-body">
                 <h5>{{user.username}}</h5>
                 <p class="text-gry">Lorem ipsum dolor sit amet.</p>
+              
               </div>
             </div>
 
