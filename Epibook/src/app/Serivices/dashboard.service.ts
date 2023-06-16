@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IPost } from '../Models/dashboard/ipost';
 import { UserService } from './user.service';
+import { IUser } from '../Models/auth/iuser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
-
   postApi: string = environment.postsApi;
 
   constructor(private http: HttpClient, private userSvc: UserService) {}
@@ -35,11 +35,17 @@ export class DashboardService {
     );
   }
 
+  follow(user: IUser, id: string) {
+    return this.http.put(
+      'https://epibooksocial-default-rtdb.firebaseio.com/users/' + id + '.json',
+      user
+    );
+  }
+
   delete(post: IPost, id: string) {
     return this.http.delete(
       'https://epibooksocial-default-rtdb.firebaseio.com/posts/' + id + '.json',
       post
     );
   }
-
 }
