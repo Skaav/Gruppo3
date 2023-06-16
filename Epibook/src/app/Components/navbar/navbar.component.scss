@@ -37,7 +37,8 @@ nav .serch-bar input[type="search"]::placeholder{
 }
 .logo h3{
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: bold;
+  color: #6B4DE6 !important;
   text-transform: uppercase;
   user-select: none;  
   color: var(--color-primary);  
