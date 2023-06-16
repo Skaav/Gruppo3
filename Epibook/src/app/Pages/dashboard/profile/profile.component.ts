@@ -73,7 +73,5 @@ export class ProfileComponent implements OnInit {
       );
     });
   }
-  logout(){
-    this.authSvc.logout()
-  }
+
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IUser } from 'src/app/Models/auth/iuser';
 import { IPost } from 'src/app/Models/dashboard/ipost';
+import { AuthService } from 'src/app/Serivices/auth.service';
 import { DashboardService } from 'src/app/Serivices/dashboard.service';
 import { UserService } from 'src/app/Serivices/user.service';
 
@@ -19,7 +20,8 @@ export class DashboardComponent {
 
   constructor(
     private dashboardSvc: DashboardService,
-    private userSvc: UserService
+    private userSvc: UserService,
+    private authSvc: AuthService
   ) {}
 
   getAll() {
@@ -73,5 +75,8 @@ export class DashboardComponent {
     const indexPost = this.postsArr.findIndex((p) => p == post);
     const key = this.postKeysArr.slice(indexPost, indexPost + 1);
     this.dashboardSvc.delete(post, key[0]).subscribe((data) => this.getAll());
+  }
+  logout(){
+    this.authSvc.logout()
   }
 }
