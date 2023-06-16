@@ -90,6 +90,10 @@ export class AccountComponent implements OnInit {
     }
   }
 
+  followedBy(): boolean {
+    return this.choosedUser.followerArr.includes(this.currentId);
+  }
+
   reload() {
     this.route.params.subscribe((params: any) => {
       this.dashSvc.getAllUsers().subscribe((data) => {

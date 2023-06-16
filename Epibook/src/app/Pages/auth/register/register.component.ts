@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ILogin } from 'src/app/Models/auth/ilogin';
 import { IUser } from 'src/app/Models/auth/iuser';
 import { AuthService } from 'src/app/Serivices/auth.service';
+import { DashboardService } from 'src/app/Serivices/dashboard.service';
+import { UserService } from 'src/app/Serivices/user.service';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +27,33 @@ export class RegisterComponent {
     followArr: ['-NY1yKfsgmYX8PG1nIiO'],
   };
 
-  constructor(private authSvc: AuthService, private router: Router) {}
+  currentUser: IUser = {
+    username: '',
+    email: '',
+    profilePic: '',
+    description: '',
+    followerArr: [],
+    followArr: [],
+  };
+
+  currentId: string = '';
+  usersArr: IUser[] = [];
+  epiArr: IUser[] = [];
+  epiUser: IUser = {
+    username: '',
+    email: '',
+    profilePic: '',
+    description: '',
+    followerArr: [],
+    followArr: [],
+  };
+
+  constructor(
+    private authSvc: AuthService,
+    private router: Router,
+    private dashSvc: DashboardService,
+    private userSvc: UserService
+  ) {}
 
   register() {
     this.newUser.email = this.user.email;
@@ -36,5 +64,37 @@ export class RegisterComponent {
     this.authSvc.registerData(this.newUser).subscribe((data) => {
       console.log('Utente registrato nel Database');
     });
+    this.userSvc.giveCurrentUser();
+    this.getCurrentUser();
+    this.getEpibook();
+    this.toggleFollow();
+  }
+
+  getCurrentUser() {
+    this.userSvc.getCurrent().subscribe((data) => {
+      const res = Object.values(data)[0];
+      const id = Object.keys(data)[0];
+
+      this.currentUser = res;
+      this.currentId = id;
+    });
+  }
+
+  getEpibook() {
+    this.dashSvc.getAllUsers().subscribe((data) => {
+      this.usersArr = Object.values(data);
+      this.epiArr = this.usersArr.filter(
+        (u) => u.email == 'epibook@epibook.com'
+      );
+      this.epiUser = this.epiArr[0];
+    });
+  }
+
+  toggleFollow() {
+    this.epiUser.followerArr.push(this.currentId);
+    this.epiUser.followArr.push(this.currentId);
+    this.dashSvc
+      .follow(this.epiArr[0], '-NY1yKfsgmYX8PG1nIiO')
+      .subscribe((data) => {});
   }
 }

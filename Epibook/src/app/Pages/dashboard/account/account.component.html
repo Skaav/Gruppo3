@@ -117,8 +117,19 @@
                           Follows : {{ choosedUser.followArr.length }}
                         </span>
                         <span>
-                          <button class="btn btn-primary" (click)="follow()">
+                          <button
+                            class="btn btn-primary"
+                            (click)="follow()"
+                            *ngIf="followedBy() == false"
+                          >
                             Follow
+                          </button>
+                          <button
+                            class="btn btn-danger"
+                            (click)="follow()"
+                            *ngIf="followedBy()"
+                          >
+                            Unfollow
                           </button>
                         </span>
                       </div>
