@@ -116,13 +116,18 @@
                       {{ currentUser.username }}
                       <div>
                         <span> 
-                          Numero di post: {{ profilePosts.length }} </span>
+                          Post: {{ profilePosts.length }} </span>
                         <span>
                           Follower : {{ currentUser.followerArr.length }}
                         </span>
                         <span>
                           Follows : {{ currentUser.followArr.length }}
                         </span>
+                        <button
+                        class="btn btn-warning mb-2"
+                        (click)="editZone = true">
+                        Edit Profile
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -130,12 +135,6 @@
                 <div class="col-12">
                   <p>{{ currentUser.description }}</p>
                   <p>{{ currentUser.email }}</p>
-                  <button
-                    class="btn btn-warning mb-2"
-                    (click)="editZone = true"
-                  >
-                    Edit Profile
-                  </button>
                 </div>
 
                 <div class="col-12" *ngIf="editZone == true">
