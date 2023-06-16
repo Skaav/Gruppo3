@@ -59,15 +59,12 @@ export class RegisterComponent {
     this.newUser.email = this.user.email;
     this.authSvc.register(this.user).subscribe((data) => {
       console.log(data);
-      this.router.navigate(['/auth', 'login']);
     });
     this.authSvc.registerData(this.newUser).subscribe((data) => {
       console.log('Utente registrato nel Database');
+      this.userSvc.currentEmail = this.newUser.email;
+      this.getCurrentUser();
     });
-    this.userSvc.giveCurrentUser();
-    this.getCurrentUser();
-    this.getEpibook();
-    this.toggleFollow();
   }
 
   getCurrentUser() {
@@ -77,6 +74,12 @@ export class RegisterComponent {
 
       this.currentUser = res;
       this.currentId = id;
+      console.log('CURRENT USER-ID 78/79');
+      console.log(this.currentUser);
+      console.log(this.currentId);
+
+
+      this.getEpibook();
     });
   }
 
@@ -84,17 +87,29 @@ export class RegisterComponent {
     this.dashSvc.getAllUsers().subscribe((data) => {
       this.usersArr = Object.values(data);
       this.epiArr = this.usersArr.filter(
-        (u) => u.email == 'epibook@epibook.com'
+        (u) => u.email == "epibook@epibook.com"
       );
       this.epiUser = this.epiArr[0];
+      this.epiUser.followerArr.push(this.currentId);
+      this.epiUser.followArr.push(this.currentId);
+
+      console.log('EPI USER 98');
+
+      console.log(this.epiUser)
+
+      this.toggleFollow();
     });
   }
 
   toggleFollow() {
-    this.epiUser.followerArr.push(this.currentId);
-    this.epiUser.followArr.push(this.currentId);
-    this.dashSvc
-      .follow(this.epiArr[0], '-NY1yKfsgmYX8PG1nIiO')
-      .subscribe((data) => {});
+    console.log('EPI USER 108');
+
+
+    console.log(this.epiUser)
+    this.dashSvc.follow(this.epiUser, '-NY1yKfsgmYX8PG1nIiO')
+      .subscribe((data) => {
+        this.router.navigate(['/auth', 'login']);
+
+      });
   }
 }
