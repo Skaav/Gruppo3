@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Serivices/user.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
+
   editZone: boolean = false;
 
   currentId: string = '';
@@ -72,6 +73,10 @@ export class ProfileComponent implements OnInit {
         (p) => p.userId == this.currentId
       );
     });
+  }
+
+  logout() {
+    this.authSvc.logout();
   }
 
 }

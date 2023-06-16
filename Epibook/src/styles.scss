@@ -49,7 +49,9 @@ img{
 }
 .author-pic{
   border-radius: 100% ;
-  width: 6%;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
 }
 
 .profile-picture{
@@ -106,7 +108,9 @@ main{
 aside{
   margin-top: 1rem;
   border-radius:var(--card-border-radius) ;
-
+  .menu-item{
+    padding: 1vh;
+  }
 }
 aside .menu-item{
   display: flex;
@@ -131,9 +135,9 @@ aside .notfy-counter{
   width: fit-content;
   font-size: 0.7rem;
   border-radius: 30%;
-  padding: 0.1rem .4rem;
+  padding: 0.1rem 0.4rem;
   position: absolute;
-  top: .7rem;
+  top: 0.7rem;
   left: 3.1rem;
 }
 
@@ -166,7 +170,7 @@ aside .menu-item:first-child{
   border-top-left-radius: var(--card-border-radius);
   border-top-right-radius: var(--card-border-radius);
 }
-aside .menu-item:nth-last-child(2){
+aside .menu-item:nth-last-child(1){
   overflow: hidden;
   border-bottom-left-radius: var(--card-border-radius);
   border-bottom-right-radius: var(--card-border-radius);

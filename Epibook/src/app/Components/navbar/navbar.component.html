@@ -11,8 +11,8 @@
           </div>
           <div class="add-post">
               <label for="add-post" class="button button-first mini-button" [routerLink]="['/dashboard', 'create']">Add Post</label>
-              <div class="profile-picture" id="my-profile-picture" [routerLink]="['/dashboard', 'profile']">
-                  <img [src]="currentUser.profilePic" alt="profile picture">
+              <div id="my-profile-picture" [routerLink]="['/dashboard', 'profile']">
+                  <img class="profile-picture" [src]="currentUser.profilePic" alt="profile picture">
               </div>
           </div>
       </div>
